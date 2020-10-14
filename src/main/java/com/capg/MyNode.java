@@ -16,5 +16,4 @@ public class MyNode<K> {
 	public void setNext(MyNode next) {
 		this.next = next;
 	}
-
 }
