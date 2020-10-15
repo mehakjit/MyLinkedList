@@ -1,8 +1,8 @@
 package com.capg;
 
 public class MyLinkedList {
-	private INode head;
-	private INode tail;
+	public INode head;
+	public INode tail;
 
 	public MyLinkedList() {
 		this.head = head;
@@ -10,6 +10,18 @@ public class MyLinkedList {
 	}
 	
 	public void add(INode newNode) {
+		if(this.tail == null) 
+			this.tail = newNode;
+		if(this.head == null)
+			this.head = newNode;
+		else {
+			INode tempNode = this.head;
+			this.head = newNode;
+			this.head.setNext(tempNode);
+		}
+	}
+	
+	public void append(INode newNode) {
 		if(this.tail == null) 
 			this.tail = newNode;
 		if(this.head == null)
