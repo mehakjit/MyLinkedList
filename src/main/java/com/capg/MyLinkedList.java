@@ -53,6 +53,16 @@ public class MyLinkedList {
 		return temp;
 	}
 	
+	public INode popLast(){
+		INode temp = head;
+		while(!temp.getNext().equals(tail)) {
+			temp = temp.getNext();
+		}
+		this.tail = temp;
+		temp = temp.getNext();
+		return temp;
+	}
+	
 	public void printMyNode() {
 		if (head == null) {
 			System.out.println("No nodes present");
