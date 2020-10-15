@@ -15,23 +15,37 @@ public class MyLinkedList {
 		if(this.head == null)
 			this.head = newNode;
 		else {
-			INode tempNode = this.head;
-			this.head = newNode;
+			INode tempNode = this.head;        //node.setNext(head);
+			this.head = newNode;			   //head = node;         will also work
 			this.head.setNext(tempNode);
 		}
 	}
 	
 	public void append(INode newNode) {
-		if(this.tail == null) 
-			this.tail = newNode;
 		if(this.head == null)
 			this.head = newNode;
+		if(this.tail == null) 
+			this.tail = newNode;
 		else {
-			INode tempNode = this.head;
-			this.head = newNode;
-			this.head.setNext(tempNode);
+			this.tail.setNext(newNode);
+			this.tail = newNode;
 		}
 	}
+	 public void addMiddle(INode node) {
+		 INode slow = head;
+		 INode fast = head.getNext();
+		 if(head == null) {
+			 this.head = node;
+			 this.tail = node;
+		 }
+		while(fast!=null && fast.getNext()!=null) {
+		 slow = slow.getNext();
+		 fast = fast.getNext().getNext();
+		}
+		INode temp = slow.getNext();
+		slow.setNext(node);
+		node.setNext(temp);
+	 }
 
 	public void printMyNode() {
 		if (head == null) {
