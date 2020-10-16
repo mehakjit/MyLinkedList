@@ -1,5 +1,6 @@
 package com.capg;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class MyHashMapTestPara {
@@ -20,6 +21,9 @@ public class MyHashMapTestPara {
 		}
 		System.out.println(mylistpara);
 		int freq = mylistpara.get("paranoid");
+		mylistpara.remove("are");
+		System.out.println(mylistpara);
+		Assert.assertEquals(3, freq);
 
 	}
 }
