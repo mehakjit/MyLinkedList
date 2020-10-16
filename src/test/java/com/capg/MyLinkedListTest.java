@@ -9,16 +9,19 @@ public class MyLinkedListTest {
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
 		MyNode<Integer> myThirdNode = new MyNode<>(56);
+		MyNode<Integer> myFouthNode = new MyNode<>(40);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.append(myThirdNode);
 		myLinkedList.addMiddle(mySecondNode);
+		myLinkedList.insertAfterNode(mySecondNode,myFouthNode);
 	//	myLinkedList.pop();
 	//	myLinkedList.popLast();
 		myLinkedList.printMyNode();
-//		boolean result = myLinkedList.head.equals(myThirdNode) &&
-//				myLinkedList.head.getNext().equals(mySecondNode) &&
-//				myLinkedList.tail.equals(myFirstNode);
-		Assert.assertEquals(mySecondNode,myLinkedList.searchNode(30));
+		boolean result = myLinkedList.head.equals(myFirstNode) &&
+				myLinkedList.head.getNext().equals(mySecondNode) &&
+				myLinkedList.head.getNext().getNext().equals(myFouthNode) &&
+				myLinkedList.tail.equals(myThirdNode);
+		Assert.assertTrue(result);
 	}
 }
