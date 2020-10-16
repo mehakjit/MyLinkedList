@@ -3,6 +3,8 @@ package com.capg;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.capg.MyNode;
+
 public class NodeTest {
 	@Test
 	public void given3NumbersWhenLinkedShouldPass() {
