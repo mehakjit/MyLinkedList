@@ -84,4 +84,10 @@ public class MyLinkedList<K> {
 		return null;
 	}
 
+	public void insertAfterNode(MyNode<Integer> mySecondNode, MyNode<Integer> myFouthNode) {
+		INode tempNode = mySecondNode.getNext();
+		mySecondNode.setNext(myFouthNode);
+		myFouthNode.setNext(tempNode);		
+	}
+
 }
