@@ -15,12 +15,13 @@ public class MyLinkedListTest {
 		myLinkedList.append(myThirdNode);
 		myLinkedList.addMiddle(mySecondNode);
 		myLinkedList.insertAfterNode(mySecondNode,myFouthNode);
+		myLinkedList.delete(myFouthNode);
 	//	myLinkedList.pop();
 	//	myLinkedList.popLast();
 		myLinkedList.printMyNode();
 		boolean result = myLinkedList.head.equals(myFirstNode) &&
 				myLinkedList.head.getNext().equals(mySecondNode) &&
-				myLinkedList.head.getNext().getNext().equals(myFouthNode) &&
+			//	myLinkedList.head.getNext().getNext().equals(myFouthNode) &&
 				myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
