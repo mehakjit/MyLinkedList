@@ -84,10 +84,22 @@ public class MyLinkedList<K> {
 		return null;
 	}
 
-	public void insertAfterNode(MyNode<Integer> mySecondNode, MyNode<Integer> myFouthNode) {
-		INode tempNode = mySecondNode.getNext();
-		mySecondNode.setNext(myFouthNode);
-		myFouthNode.setNext(tempNode);		
+	public void insertAfterNode(MyNode addAfterThisNode, MyNode addThisNode) {
+		INode tempNode = addAfterThisNode.getNext();
+		addAfterThisNode.setNext(addThisNode);
+		addThisNode.setNext(tempNode);		
+	}
+
+	public void delete(MyNode deleteThisNode) {
+		if (this.head == deleteThisNode)
+			pop();
+		else {
+			INode tempNode = this.head;
+			while (tempNode.getNext() != deleteThisNode) {
+				tempNode = tempNode.getNext();
+			}
+			tempNode.setNext(tempNode.getNext().getNext());
+		}
 	}
 
 }
