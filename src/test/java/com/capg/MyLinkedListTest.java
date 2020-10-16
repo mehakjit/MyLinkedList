@@ -3,6 +3,9 @@ package com.capg;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.capg.MyLinkedList;
+import com.capg.MyNode;
+
 public class MyLinkedListTest {
 	@Test
 	public void given3NumbersWhenAddedShouldBeAddedToTop() {

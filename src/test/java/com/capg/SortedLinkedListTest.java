@@ -3,6 +3,9 @@ package com.capg;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.capg.MyNode;
+import com.capg.SortedLinkedList;
+
 public class SortedLinkedListTest {
 @Test
 public void given3NodesShouldGiveResultInSortedList() {
